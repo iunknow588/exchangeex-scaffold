@@ -1,0 +1,10 @@
+{
+  "contractAddress": "0x178Fc07106BAda5d423003d62e8aABb0850e1713",
+  "deploymentTxHash": "0x585d23995d1a02b1ba5e429d5c60e53f17c737f6253b839c7930973fbd7be74f",
+  "deploymentNetwork": "injTestnet",
+  "deployerAddress": "0xd95C2810cfb43BdE49FDa151b17E732089DB75D7",
+  "blockExplorer": "https://testnet.blockscout.injective.network",
+  "deploymentTime": "2024-08-06T20:52:00Z",
+  "gasUsed": 4198800,
+  "defaultSubaccountID": "178fc07106bada5d423003d62e8aabb0850e1713000000000000000000000000"
+} 
