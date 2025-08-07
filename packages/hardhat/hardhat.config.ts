@@ -129,11 +129,16 @@ const config: HardhatUserConfig = {
     },
     // Injective Testnet
     injTestnet: {
-      url: process.env.INJ_TESTNET_RPC_URL || "https://testnet.sentry.tm.injective.network:443",
+      url: process.env.INJ_TESTNET_RPC_URL || "https://k8s.testnet.json-rpc.injective.network/",
       accounts: [deployerPrivateKey],
       chainId: 1439,
       gasPrice: 5000000000, // 5 gwei
-      timeout: 60000,
+      timeout: 120000, // 增加超时时间
+      verify: {
+        etherscan: {
+          apiUrl: "https://testnet.blockscout.injective.network/api",
+        },
+      },
     },
   },
   // Configuration for harhdat-verify plugin

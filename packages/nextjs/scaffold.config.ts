@@ -1,6 +1,6 @@
 import * as chains from "viem/chains";
 
-// 定义 Injective 测试网
+// 定义 Injective 测试网 - 根据官方文档更新
 const injTestnet = {
   id: 1439,
   name: "Injective Testnet",
@@ -11,11 +11,17 @@ const injTestnet = {
     symbol: "INJ",
   },
   rpcUrls: {
-    public: { http: ["https://testnet.sentry.tm.injective.network:443"] },
-    default: { http: ["https://testnet.sentry.tm.injective.network:443"] },
+    public: { http: ["https://k8s.testnet.json-rpc.injective.network/"] },
+    default: { http: ["https://k8s.testnet.json-rpc.injective.network/"] },
   },
   blockExplorers: {
     default: { name: "Blockscout", url: "https://testnet.blockscout.injective.network" },
+  },
+  contracts: {
+    multicall3: {
+      address: "0xca11bde05977b3631167028862be2a173976ca11",
+      blockCreated: 1,
+    },
   },
 } as const;
 
@@ -47,8 +53,8 @@ const scaffoldConfig = {
   // If you want to use a different RPC for a specific network, you can add it here.
   // The key is the chain ID, and the value is the HTTP RPC URL
   rpcOverrides: {
-    // Injective 测试网 RPC 端点
-    [injTestnet.id]: process.env.NEXT_PUBLIC_INJECTIVE_RPC_URL || "https://testnet.sentry.tm.injective.network:443",
+    // Injective 测试网 RPC 端点 - 根据官方文档更新
+    [injTestnet.id]: process.env.NEXT_PUBLIC_INJECTIVE_RPC_URL || "https://k8s.testnet.json-rpc.injective.network/",
   },
   // This is ours WalletConnect's default project ID.
   // You can get your own at https://cloud.walletconnect.com
